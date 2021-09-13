@@ -1,0 +1,14 @@
+{
+"DangerousGoodsLimitation" :["fx:Flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:dangerousGoodsLimitation"],
+"DangerousGoodsQuantity?": ["fx:Flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:dangerousGoodsQuantity"],
+"DangerousGoodsUNNumber?": ["fx:Flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:unNumber"],
+"DangerousGoodsVolume?": ["fx:Flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:shipmentDimensions","fx:volume","_"],
+"Division?": ["fx:Flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:hazardClass","fx:division"],
+"DominantHazardClass?": ["fx:Flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:hazardClass","fx:class"],
+"GrossWeight?": ["fx:Flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:shipmentDimensions","fx:grossWeight","_"],
+"NetWeight?": ["fx:Flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:shipmentDimensions","fx:netWeight","_"],
+"PackageQuantity?": ["fx:Flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:allPackedInOne","fx:numberOfPackages"],
+"PackingGroupCode?": ["fx:Flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:packingGroup"],
+"ProperShippingName?": ["fx:Flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:properShippingName"],
+"TransportRadiationLevelIndex?": ["fx:Flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:radioactiveMaterials","fx:transportIndex"]
+}

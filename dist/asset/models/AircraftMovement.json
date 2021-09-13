@@ -1,0 +1,47 @@
+{
+    "actualTimeOfArrival" : ["fx:Flight","fx:arrival","fx:actualTimeOfArrival"],
+    "actualTimeOfDeparture" : ["fx:Flight","fx:departure","fx:actualTimeOfDeparture"] ,
+    "alternateAirport" :["fx:Flight","fx:enRoute","fx:alternateAerodrome","iataDesignator"],
+    "airfileIndicatorCode" : ["fx:Flight","fx:departure","fx:airfileIndicator"],
+    "atOrAboveAltitudeCode":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:routeChange","fx:level","fx:level","flightLevel","_"],
+    "cruisingSpeedChangeSpeed":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:routeChange","fx:speed","fx:speed","_"],
+    "arrivalAirport" : ["fx:Flight","fx:arrival","fx:arrivalAerodrome","iataDesignator"],
+    "arrivalAirportSlotIdentification": ["fx:Flight","fx:departure","fx:airportSlotIdentification"],
+    "cruiseClimbLevel":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:routeChange","fx:cruiseClimbStart","fx:level","flightLevelOrAltitudeValue","altitude","_"],
+    "cruiseClimbSpeed":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:routeChange","fx:cruiseClimbStart","fx:speed","_"],
+    "cruisingLevelChangeLevel":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:routeChange","fx:level","fx:level","flightLevel","_"],
+    "currentModeACode": ["fx:Flight","fx:enRoute","fx:currentModeACode"],
+    "delayReason":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:enRouteDelay","fx:delayReason"],
+    "delayReference":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:enRouteDelay","fx:delayReference"],
+    "delayType":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:enRouteDelay","fx:delayType"],
+    "departureAirportSlotIdentification":["fx:Flight","fx:departure","fx:airportSlotIdentification"],
+    "destinationAirport":["fx:Flight","fx:arrival","fx:destinationAerodrome","iataDesignator"],
+    "destinationAirportAlternate":["fx:Flight","fx:arrival","fx:destinationAerodromeAlternate","iataDesignator"],
+    "destinationAirportPrevious" : ["fx:Flight","fx:arrival","fx:destinationAerodromePrevious","iataDesignator"],
+    "estimatedAircraftTakeoffMass":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed","fx:takeoffMass","_"]
+    ,"estimatedElapsedTime":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed","fx:routeInformation","fx:estimatedElapsedTime","fx:elapsedTime"]
+    ,"estimatedOffBlockTime":["fx:Flight","fx:departure","fx:estimatedOffBlockTime"]
+    ,"estimatedOffBlockTimePrevious":["fx:Flight","fx:departure","fx:estimatedOffBlockTimePrevious"]
+    ,"flightPlanOriginatorParty":["fx:Flight","fx:flightPlanOriginator"]
+    ,"flightPlanSubmitterParty":["fx:Flight","fx:flightPlanSubmitter"]
+    ,"fuelEnduranceDuration":["fx:Flight","fx:supplementaryData","fx:fuelEndurance"]
+    ,"gufiOriginatorParty":["fx:Flight","fx:gufiOriginator"]
+    ,"inboundOrigin":["fx:Flight","fx:departure","fx:aerodrome","iataDesignator"]
+    ,"inboundOriginPrevious":["fx:Flight","fx:departure","fx:aerodromePrevious","iataDesignator"]
+    ,"operator":["fx:Flight","fx:operator","operatingOrganization"]
+    ,"personsOnBoardQuantity":["fx:Flight","fx:supplementaryData","fx:personsOnBoard"]
+    ,"pilotInCommand":["fx:Flight","fx:supplementaryData","fx:pilotInCommand"]
+    ,"profilePointAirSpeed":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed","fx:climbProfile","fx:profilePoint","fx:airspeed","_"]
+    ,"profilePointDistance":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed","fx:climbProfile","fx:profilePoint","fx:distance","_"]
+    ,"profilePointAltitude":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed","fx:climbProfile","fx:profilePoint","fx:level","flightLevel","_"]
+    ,"profilePointTimeDuration":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed","fx:climbProfile","fx:profilePoint","fx:time"]
+    ,"remarks":["fx:Flight","fx:remarks"]
+    ,"runwayLandingDirection":["fx:Flight","fx:arrival","fx:runwayDirection","_"]
+    ,"runwayTakeoffDirection":["fx:Flight","fx:departure","fx:runwayDirection","_"]
+    ,"speedScheduleInitialSpeed":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed","fx:climbSchedule","fx:initialSpeed","_"]
+    ,"speedScheduleSubsequentSpeed":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed","fx:climbSchedule","fx:subsequentSpeed","_"]
+    ,"takeOffAlternateAerodrome":["fx:Flight","fx:departure","fx:takeoffAlternateAerodrome","iataDesignator"]
+
+
+}
+
