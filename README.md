@@ -8,7 +8,7 @@ Nodejs library for FIXM 4.2 XML schema to ACRIS JSON Schema converter which take
 	-  scripts to convert the project to js
 	-  Sample code in JS
 #### *Running the sample* ####
-        -  npm install"
+        -  Run  “npm i”
 	-  Build the project using “npm run build”
 	-  Go to the sample folder
 	-  run “ node sample.js”
