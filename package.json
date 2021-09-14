@@ -1,14 +1,14 @@
 {
   "name": "fixmtoacrisconverter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "FixM 4.2 50 ACRIS JSON converter .The is named as fixmtoacrisconverter.",
   "main": "index.js",
   "typings": "index.d.ts",
   "scripts": {
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
-    "build": "npm run build-ts && copyfiles -u 1 src/asset/*/*.json dist/",
-    "clean": "shx rm -rf ./dist/*",
+    "build": "npm run build-ts && copyfiles -u 1 src/asset/*/*.json lib/",
+    "clean": "shx rm -rf ./lib/*",
     "fixm": "tsc && node index.js",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
@@ -18,6 +18,9 @@
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
+  "files": [
+    "lib/**/*"
+  ],
   "dependencies": {
     "@types/node": "^13.13.4",
     "@types/prettier": "^2.3.2",
@@ -40,16 +43,23 @@
     "url": "git+https://github.com/fly2plan/fixm-to-acris-converter-lib.git"
   },
   "author": "Renjith K N .IBS software",
+  "keywords": [
+    "FIXM",
+    "ACRIS"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fly2plan/fixm-to-acris-converter-lib.git"
   },
   "homepage": "https://github.com/fly2plan/fixm-to-acris-converter-lib.git#readme",
   "devDependencies": {
+    "@types/jest": "^27.0.1",
     "copyfiles": "^2.4.1",
+    "jest": "^27.2.0",
     "json-find": "^2.0.8",
     "prettier": "^2.4.0",
     "shx": "^0.3.3",
+    "ts-jest": "^27.0.5",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0"
   }

@@ -1,4 +1,3 @@
-
 import { getAlternative } from "../asset/asset";
 import winston from "winston" ;
 const logger = winston.createLogger({
@@ -34,7 +33,8 @@ function getDataFromObject(dataObject : any,Key :any){
             }
             break
         case 'undefined':
-            logger.error("Data Undefined");
+            logger.error("The data for key :" + Key + " is undefined, setting empty value");
+            keyValue = ''
             
     }
     return keyValue;
@@ -53,9 +53,8 @@ export function fetchDataFromPath(dataObj: any, keyList:string[]){
 }
 
 function tryAlternateKey(key:string){
-    logger.warn(" Cannot find key : ", key)
-    logger.info("Trying Alternative key")
-    let altKeys = getAlternative();
+    logger.warn('Cannot find key : '+ key+ ' Trying Alternative key')
+    const altKeys = getAlternative();
     if(altKeys.hasOwnProperty(key)){
         return altKeys[key] ;
     }else{

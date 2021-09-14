@@ -34,6 +34,5 @@ export const getEmptyAcris = () : any=> {
         },
         "flightStatus": "",
         "extensions": {}
-      };
-
-}
+      }
+};
