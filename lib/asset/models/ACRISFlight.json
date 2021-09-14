@@ -1,0 +1,45 @@
+{"operatingAirline": {
+
+    "icaoCode": ["fx:Flight","fx:operator","designatorIcao"],
+    "name": ["fx:Flight","fx:operator","operatingOrganization","name"]
+  
+},
+"aircraftType": {
+    "icaoCode": ["fx:Flight","fx:aircraft","fx:aircraftType","fx:type"],
+    "modelName": ["fx:Flight","fx:aircraft","fx:coloursAndMarkings"],
+    "registration": ["fx:Flight","fx:aircraft","fx:registration"]
+  },        
+"flightNumber": {
+    "airlineCode": ["fx:Flight","fx:flightPlanOriginator","identifier"],
+    "trackNumber": ["fx:Flight","fx:departure","fx:runwayDirection","_"]
+  },
+"departureAirport": ["fx:Flight","fx:departure","fx:aerodrome"],
+"arrivalAirport": ["fx:Flight","fx:arrival","fx:arrivalAerodrome"],
+"originDate": ["fx:Flight","fx:departure","fx:actualTimeOfDeparture"],
+"departure": {
+
+    "terminal": ["fx:Flight","fx:departure","fx:runwayDirection","_"]
+},
+"arrival": {
+
+   "terminal": ["fx:Flight","fx:arrival","fx:runwayDirection","_"]
+
+ },
+"extensions": {
+    "nb":"MeteorologicalEnvironment",
+    "AircraftMovement":"AircraftMovement",
+    "AircraftTransport":"AircraftTransport",
+    "AirportFacility":"AirportFacility",
+    "Route":"AircraftMovementRoute",
+    "aircraftMovementConstraint":"AircraftMovementConstraint",
+    "aircraftMovementEmergency":"AircraftMovementEmergency",
+    "aircraftMovementIdentification":"AircraftMovementIdentification",
+    "CargoItem":"CargoItem",
+    "RouteConstraint":"RouteConstraint"
+
+
+
+  }
+  
+
+}
