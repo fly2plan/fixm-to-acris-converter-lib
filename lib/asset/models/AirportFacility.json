@@ -1,4 +1,0 @@
-{
-    "IATAIdentifier":["fx:Flight","fx:arrival","fx:arrivalAerodrome","iataDesignator"],
-    "Name":["fx:Flight","fx:arrival","fx:arrivalAerodrome","name"]
-}
