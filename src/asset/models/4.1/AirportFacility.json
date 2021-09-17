@@ -1,0 +1,4 @@
+{
+    "IATAIdentifier":["mesg:Message","mesg:flight","fx:arrival","fx:arrivalAerodrome","iataDesignator"],
+    "Name":["mesg:Message","mesg:flight","fx:arrival","fx:arrivalAerodrome","name"]
+}

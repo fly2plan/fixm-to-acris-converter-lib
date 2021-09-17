@@ -1,0 +1,11 @@
+{
+    "AirWaybillNumber": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:airWaybillNumber"],
+    "AircraftCargoLimitation": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:dangerousGoodsLimitation"],
+    "CompatibilityGroup": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:compatibilityGroup"],
+    "CriticalSafetyIndex": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:radioactiveMaterials","fx:criticalSafetyIndex"],
+    "OnboardLocation": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:onboardLocation"],
+    "ShipmentAuthorisations": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:shippingInformation","fx:shipmentAuthorizations"],
+    "SubsidiaryHazardClassAndDivision": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:shippingInformation","fx:subsidiaryHazardClassAndDivision"]
+    ,"PackageGroupType":"PackageGroupType"
+}
+

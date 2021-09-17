@@ -1,0 +1,5 @@
+{
+    "Temperature": ["mesg:Message","mesg:flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:point4D","fx:metData","fx:temperature","_"],
+"WindDirection": ["mesg:Message","mesg:flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:point4D","fx:metData","fx:windDirection","_"],
+"WindSpeed": ["mesg:Message","mesg:flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:point4D","fx:metData","fx:windSpeed","_"]
+}

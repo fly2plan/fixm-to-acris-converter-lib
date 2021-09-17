@@ -1,0 +1,14 @@
+{
+"DangerousGoodsLimitation" :["mesg:Message","mesg:flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:dangerousGoodsLimitation"],
+"DangerousGoodsQuantity?": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:dangerousGoodsQuantity"],
+"DangerousGoodsUNNumber?": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:unNumber"],
+"DangerousGoodsVolume?": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:shipmentDimensions","fx:volume","_"],
+"Division?": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:hazardClass","fx:division"],
+"DominantHazardClass?": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:hazardClass","fx:class"],
+"GrossWeight?": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:shipmentDimensions","fx:grossWeight","_"],
+"NetWeight?": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:shipmentDimensions","fx:netWeight","_"],
+"PackageQuantity?": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:allPackedInOne","fx:numberOfPackages"],
+"PackingGroupCode?": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:packingGroup"],
+"ProperShippingName?": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:properShippingName"],
+"TransportRadiationLevelIndex?": ["mesg:Message","mesg:flight","fx:dangerousGoods","fx:packageGroup","fx:dangerousGoodsPackage","fx:radioactiveMaterials","fx:transportIndex"]
+}

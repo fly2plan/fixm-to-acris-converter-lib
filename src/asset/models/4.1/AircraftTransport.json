@@ -1,0 +1,25 @@
+{
+    
+    "AircraftAddress":["mesg:Message","mesg:flight","fx:aircraft","$","aircraftAddress"],
+    "formation":"AircraftTransportFormation",
+    "AircraftTransportType":"AircraftTransportType",
+
+    "AircraftType":["mesg:Message","mesg:flight","fx:aircraft","fx:aircraftType","fx:type","fx:otherAircraftType"],
+    "AircraftTransportEquipment":{
+        "CommunicationCapabilityCode": ["mesg:Message","mesg:flight","fx:aircraft","fx:capabilities","fx:communication","fx:communicationCapabilityCode"],
+        "datalinkCommunicationCapabilityCodeList" : ["mesg:Message","mesg:flight","fx:aircraft","fx:capabilities","fx:communication","fx:datalinkCommunicationCapabilityCode"],
+        "dinghies" : "DinDinghy",
+        "emergencyRadioCapabilityTypeList" : ["mesg:Message","mesg:flight","fx:aircraft","fx:capabilities","fx:survival","fx:emergencyRadioCapabilityType"],
+        "otherNavigationCapabilities": ["mesg:Message","mesg:flight","fx:aircraft","fx:capabilities","fx:navigation","$","otherNavigationCapabilities"],
+        "otherSurveillanceCapabilities": ["mesg:Message","mesg:flight","fx:aircraft","fx:capabilities","fx:surveillance","fx:otherSurveillanceCapabilities"],
+        "performanceBasedCode": ["mesg:Message","mesg:flight","fx:aircraft","fx:capabilities","fx:navigation","fx:performanceBasedCode"],
+        "surveillanceCapabilityCode": ["mesg:Message","mesg:flight","fx:aircraft","fx:capabilities","fx:surveillance","fx:surveillanceCapabilityCode"],
+        "survivalEquipmentRemarks": ["mesg:Message","mesg:flight","fx:aircraft","fx:capabilities","fx:survival","fx:survivalEquipmentRemarks"],
+        "survivalEquipmentType": ["mesg:Message","mesg:flight","fx:aircraft","fx:capabilities","fx:survival","fx:survivalEquipmentType"],
+        "SelectiveCallingCode": ["mesg:Message","mesg:flight","fx:aircraft","fx:capabilities","fx:communication","$","selectiveCallingCode"]
+
+    },
+    "Identifier" : {
+        "Registration" :["mesg:Message","mesg:flight","fx:aircraft","fx:registration"]
+    }
+}

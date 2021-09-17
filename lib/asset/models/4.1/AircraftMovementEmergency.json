@@ -1,0 +1,15 @@
+{
+    
+    "actionTaken": ["mesg:Message","mesg:flight","fx:emergency","fx:actionTaken"],
+    "atsOriginatorIcaoIdentifier":["mesg:Message","mesg:flight","fx:emergency","fx:originator","atcUnitNameOrAlternate"]
+    ,"emergencyDescription":["mesg:Message","mesg:flight","fx:emergency","fx:emergencyDescription"]
+    ,"determinationMethod":["mesg:Message","mesg:flight","fx:emergency","fx:lastContact","fx:position","fx:determinationMethod"]
+    ,"lastContactATSUnit" :["mesg:Message","mesg:flight","fx:emergency","fx:lastContact","fx:lastContactUnit"],
+    "lastContactFrequency":["mesg:Message","mesg:flight","fx:emergency","fx:lastContact","fx:lastContactFrequency","_"],
+    "lastContactTime":["mesg:Message","mesg:flight","fx:emergency","fx:lastContact","fx:lastContactTime"],
+    "lastKnownPositionLocation":["mesg:Message","mesg:flight","fx:emergency","fx:lastContact","fx:position","fx:position"],
+    "lastKnownPositionTime":["mesg:Message","mesg:flight","fx:emergency","fx:lastContact","fx:position","fx:timeAtPosition"],
+    "otherInformation":["mesg:Message","mesg:flight","fx:emergency","fx:otherInformation"],
+    "radioFailureRemarks":["mesg:Message","mesg:flight","fx:radioCommunicationFailure","fx:radioFailureRemarks"],
+    "remainingCommunicationCapability":["mesg:Message","mesg:flight","fx:radioCommunicationFailure","fx:remainingComCapability"]
+}
