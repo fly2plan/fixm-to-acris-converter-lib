@@ -42,7 +42,7 @@ export function transformFixmToAcris(xmlString:any,fixmversion?:string):any{
     logger.info("Formatting ACRIS data")
     ACRIS_OBJ = formatObject(ACRIS_OBJ) 
     logger.info(" Validateing ACRIS Fields")
-    ACRIS_OBJ = validateObject(ACRIS_OBJ)
+    ACRIS_OBJ = validateObject(ACRIS_OBJ,VERSION)
     logger.info(" Parsed Object returned  as JSON ")
     return ACRIS_OBJ;
 
@@ -55,7 +55,6 @@ function mapper(classElement:any): any{
 }
 
 function mapAttributesOfElement(elementName : string,elementObj?: any){
-
     let AirMoveAttributes:any;
     if(elementObj !== undefined){
         AirMoveAttributes = elementObj

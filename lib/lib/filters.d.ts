@@ -5,3 +5,4 @@ export declare function removeEmptyFields(obj: any): void;
 export declare function removeSingleArray(obj: any): void;
 export declare function removeEmptyObject(key: any, value: any, obj: any): void;
 export declare function removeEmptyArrays(key: any, value: any, obj: any): void;
+export declare function removeEmptyKeyFields(obj: any): void;

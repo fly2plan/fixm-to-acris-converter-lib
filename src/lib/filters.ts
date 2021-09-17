@@ -2,7 +2,7 @@ import { isEmpty } from "./objectHandler";
 
 
 export function removeUnwantedKeys(dataValue : any){
-    const keyList = ["extension","$"]
+    const keyList = ["extension","$","xsi:type"]
     keyList.forEach(key=>{
         if(keyPresent(dataValue,key)){
             delete dataValue[key] ;
@@ -19,7 +19,7 @@ export function removeTag(objValue:any){
     const tag = "fx:"
     Object.keys(objValue).forEach(key=>{
         if(key.includes(tag)){
-            const newKey = key.replace(tag,'')
+            let newKey = key.replace(tag,'')
             objValue[newKey] = objValue[key]
             delete objValue[key]
         }
@@ -63,3 +63,10 @@ export function removeEmptyArrays(key:any,value:any,obj:any){
 }
 
 
+export function removeEmptyKeyFields(obj:any){
+        Object.keys(obj).forEach(key=>{
+            if(isEmpty(obj[key])){
+                delete obj[key]
+            }
+        })
+}

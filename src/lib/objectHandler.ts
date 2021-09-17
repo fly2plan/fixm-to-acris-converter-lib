@@ -1,7 +1,7 @@
 import { getAlternative, getCollectionModel } from "../asset/asset";
 import winston from "winston" ;
 
-const IterateObject = require("iterate-object");
+const IterateObject = require("iterate-object")
 const logger = winston.createLogger({
     'transports': [
         new winston.transports.Console()

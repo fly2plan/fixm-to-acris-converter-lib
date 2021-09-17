@@ -38,7 +38,7 @@ export function formatObject(formatObj:any){
                 formatObject(value)
         }
     })
-
+    FILTER.removeEmptyKeyFields(formatObj)
     return formatObj
 }
 

@@ -10,8 +10,7 @@
     "registration": ["mesg:Message","mesg:flight","fx:aircraft","$","registration"]
   },        
 "flightNumber": {
-    "airlineCode": ["mesg:Message","mesg:flight","fx:flightIdentification","$","aircraftIdentification"],
-    "trackNumber": ["mesg:Message","mesg:flight","fx:flightIdentification","$","aircraftIdentification"]
+    "airlineCode": ["mesg:Message","mesg:flight","fx:flightIdentification","$","aircraftIdentification"]
   },
 "departureAirport": ["mesg:Message","mesg:flight","fx:departure","fx:aerodrome","$","locationIndicator"],
 "arrivalAirport": ["mesg:Message","mesg:flight","fx:arrival","fx:destinationAerodrome","$","locationIndicator"],
