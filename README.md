@@ -1,20 +1,29 @@
 # Fixm-To-ACRIS-Converter-Lib
 
-Nodejs library for FIXM 4.2 XML schema to ACRIS JSON Schema converter which take an FIXM xml contenet or file path as an input parameter and produce ACRIS based JSON ouput. The sample folder has file which shows how to use the library.  
+Nodejs library for FIXM 4.2 XML schema to ACRIS JSON Schema converter which takes a FIXM XML content or file path as an input parameter and produces ACRIS-based JSON output. The sample folder has a file that shows how to use the library.  
 
 
-####  * The Project Consist of * ####
+####   The Project consist of   ####
 	-  JSON files that maps the fixm xml tags to ACRIS attributes
 	-  Typescript source code
 	-  scripts to convert the project to js
 	-  Sample code in JS
+
 #### * Running the sample * ####
+
 	-  Build the project using “npm run build”
 	-  Go to the sample folder
 	-  run “ node sample.js”
 	-  This will generate an ACRIS.json file corresponding  to the given fixm sample
-        -  The file acris.json have the output of the execution.
+            -  The file acris.json have the output of the execution.
 	
-The transformFixmToAcris and transformXmlFileToAcris function are  entry points into the lib. The function transformFixmToAcris accept XML file contents and schema version(optional parameter one, no need to pass) as parameters. The function transformXmlFileToAcris accepts XML the file path and version . Version is optional parameter . Default is 4.2 .
+The transformFixmToAcris and transformXmlFileToAcris functions are the  entry points functions  into the lib. The function transformFixmToAcris accept XML file contents and schema version(optional parameter one, no need to pass) as parameters. The function transformXmlFileToAcris accepts XML the file path and version( optional parameter) . Default is 4.2 .
+
+The sample.js file inside the sample folder shows how to use the library. Running the sample.js produces the output JSON file with the name acris.json file in the same folder. 
+
+
+The library finds the IATA code from ICAO from a mapping property file if the data present in the file. Otherwise, it gives an empty value as IATA code. Updating the property file will solve this issue.
+
 	
+
 
