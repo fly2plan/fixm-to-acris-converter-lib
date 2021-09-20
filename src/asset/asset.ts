@@ -1,10 +1,10 @@
 import { readFileSync } from "fs"
+import { DEFAULT_VERSION } from "../lib/constants"
 import path = require("path")
 
-let DEFAULT_VERSION = "4.2"
 
 
-export function getModel(modelFileName :string,version?:string) {
+export const getModel = (modelFileName :string,version?:string)=>{
     if(version === undefined){
         version = DEFAULT_VERSION
     }
@@ -12,15 +12,15 @@ export function getModel(modelFileName :string,version?:string) {
     return readFileSync(modelPath,"utf8")
 }
 
-export function getIATA(){
+export const getIATA= ()=>{
     return JSON.parse(readFileSync(__dirname+"/IATA/ICAO_To_IATA.json", "utf8"))
 }
 
-export function getAlternative(){
+export const getAlternative = ()=>{
     return JSON.parse(readFileSync(__dirname+"/Alternate/Alternate.json", "utf8"))
 }
 
-export function getCollectionModel(version?:string){
+export const getCollectionModel = (version?:string)=>{
     if(version === undefined){
         version = DEFAULT_VERSION
     }

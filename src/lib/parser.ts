@@ -5,7 +5,7 @@ import { ACRISFlight } from "../asset/ACRISFlight";
 import * as jsHandle from "./objectHandler"
 import {formatObject} from "./formatter" ;
 import {getCollectionModel, getModel} from "../asset/asset" ; 
-import winston, { version } from "winston" ;
+import winston from "winston" ;
 import { Parser } from "xml2js"
 import { validateObject } from "./validator";
 
@@ -21,39 +21,45 @@ let VERSION :any
 let FIXM_DATA:object;
 let ACRIS_OBJ:object;
 
-function setObjectValues(fixmDataObj:object){
+
+const setObjectValues = (fixmDataObj:object)=>{
     ACRIS_OBJ =  jsHandle.JSONify(getEmptyAcris())
     FIXM_DATA = fixmDataObj
 }
 
-
-export function parseFixmFromFile(fixmFilePath:string,fixmversion?:string){
+// Takes in an XML filepath, reads the contents and converts the XML contents to ACRIS
+export const transformXmlFileToAcris = (fixmFilePath:string,fixmversion?:string)=>{
     const fixmString = readFile(fixmFilePath)
     return transformFixmToAcris(fixmString,fixmversion)
 }
 
 
-export function transformFixmToAcris(xmlString:any,fixmversion?:string):any{
-    
-    setFixmDatFromFile(xmlString,fixmversion)
+// Takes in an XML string and converts it to ACRIS
+export const transformFixmToAcris = (xmlString:any,fixmversion?:string):any =>{
+    try{
+        setFixmDatFromFile(xmlString,fixmversion)
+    }catch(e){
+        logger.error("Invalid Fixm String : ", e)
+        return
+    }
     logger.info("Starting XML parsing")
     ACRIS_OBJ = jsHandle.JSONify(mapper(ACRISFlight))
+    logger.info(" Validateing ACRIS Fields")
+    ACRIS_OBJ = validateObject(ACRIS_OBJ)
     logger.info("Formatting ACRIS data")
     ACRIS_OBJ = formatObject(ACRIS_OBJ) 
-    logger.info(" Validateing ACRIS Fields")
-    ACRIS_OBJ = validateObject(ACRIS_OBJ,VERSION)
     logger.info(" Parsed Object returned  as JSON ")
     return ACRIS_OBJ;
-
 }
 
-function mapper(classElement:any): any{
+// Maps the XML tags to ACRIS attributes
+const mapper = (classElement:any): any=>{
     const dataObj = mapAttributesOfElement(classElement.name)
     toClass(dataObj,classElement)
     return dataObj
 }
 
-function mapAttributesOfElement(elementName : string,elementObj?: any){
+const mapAttributesOfElement =(elementName : string,elementObj?: any)=>{
     let AirMoveAttributes:any;
     if(elementObj !== undefined){
         AirMoveAttributes = elementObj
@@ -83,10 +89,9 @@ function mapAttributesOfElement(elementName : string,elementObj?: any){
         }    
     })
     return AirMoveAttributes
-
 }
 
-function setFixmDatFromFile(fixmData:string,fixmVersion?:string){
+const setFixmDatFromFile = (fixmData:string,fixmVersion?:string)=>{
     VERSION = fixmVersion
     parser.parseString(fixmData, (err:any, result:any) => {
         if(err) throw err

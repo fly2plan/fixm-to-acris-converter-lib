@@ -1,6 +1,7 @@
 import { getAlternative } from "../asset/asset";
 import winston from "winston" ;
 
+// tslint:disable-next-line: no-var-requires
 const IterateObject = require("iterate-object")
 const logger = winston.createLogger({
     'transports': [
@@ -9,7 +10,7 @@ const logger = winston.createLogger({
 });
 
 
-export function getType(object:any){
+export const getType=(object:any)=>{
     if(Array.isArray(object)){
         return 'array' ;
     }else{
@@ -18,18 +19,18 @@ export function getType(object:any){
 }
 
 
-export function JSONify(data :any){
+export const JSONify=(data :any)=>{
     return JSON.parse(JSON.stringify(data));
 }
 
 
-function getDataFromObject(dataObject : any,Key :any){
+const getDataFromObject=(dataObject : any,Key :any)=>{
     Key = verifiedKey(dataObject,Key);
     if(Key === null){
         return ''
     }
     let keyValue = dataObject[Key];
-    switch (typeof keyValue){
+    switch(typeof keyValue){
             case 'object':
                 if(Array.isArray(keyValue)){
                     keyValue = keyValue[0];
@@ -38,14 +39,14 @@ function getDataFromObject(dataObject : any,Key :any){
                 }
                 break
             case 'undefined':
-                logger.error("The data for key :" + Key + " is undefined, setting empty value");
+                logger.error(`The data for key : ${Key} is undefined, setting empty value`);
                 keyValue = ''
             }
     return keyValue;
 }
 
 
-export function fetchDataFromPath(dataObj: any, keyList:string[]){
+export const fetchDataFromPath=(dataObj: any, keyList:string[])=>{
     keyList.forEach(key =>{
         dataObj = getDataFromObject(dataObj,key);
     })
@@ -57,7 +58,7 @@ export function fetchDataFromPath(dataObj: any, keyList:string[]){
 }
 
 
-function verifiedKey (dataObj :object,key:any){
+const verifiedKey= (dataObj :object,key:any)=>{
     if (!Array.isArray(dataObj)){
         if(dataObj.hasOwnProperty(key)){
             return key ;
@@ -68,26 +69,23 @@ function verifiedKey (dataObj :object,key:any){
     
 }
 
-function tryAlternateKey(key:string){
-    logger.warn('Cannot find key : '+ key+ ' Trying Alternative key')
+const tryAlternateKey=(key:string)=>{
     const altKeys = getAlternative();
     if(altKeys.hasOwnProperty(key)){
         return altKeys[key] ;
     }else{
-        logger.warn('Cannot find alternate for key : '+ key)
         return null ;
     }
 
 }
 
-export function generateCollectionFromObject(collectionObject:any,Key:string,collectionDetails:any,iterObj:any):any{
+export const generateCollectionFromObject=(collectionObject:any,Key:string,collectionDetails:any,iterObj:any):any=>{
   let CollectObj :any;
   const collectionKeySet = collectionDetails.keys
   let collectionBase = collectionDetails.base
   if(iterObj !== ''){
         IterateObject([iterObj],(value:any)=>{
-            let type = getType(value)
-            switch (type){
+            switch (getType(value)){
                 case 'object':
                         collectionBase = verifiedKey(value,collectionBase)
                         if(collectionBase !== null){
@@ -113,11 +111,10 @@ export function generateCollectionFromObject(collectionObject:any,Key:string,col
 
 
 
-function collectKeys(obj :any,Pkey:any){
-    let objectLst:any = []
+const collectKeys=(obj :any,Pkey:any)=>{
+    const objectLst:any = []
     IterateObject(obj,(value:any)=>{
-        let type = getType(value)
-        switch(type){
+        switch(getType(value)){
             case 'object':
                 Object.keys(value).forEach(key=>{
                     if(key === Pkey){
@@ -131,10 +128,15 @@ function collectKeys(obj :any,Pkey:any){
 }
 
 
-export function isEmpty(obj:any) {
+export const isEmpty=(obj:any) =>{
+    // tslint:disable-next-line: prefer-const
     for(let key in obj) {
         if(obj.hasOwnProperty(key))
             return false;
     }
     return true;
+}
+
+export const keyPresent=(srcObj:any,keyValue :string)=>{
+    return srcObj.hasOwnProperty(keyValue) ;
 }

@@ -1,5 +1,5 @@
-export declare function validateFlightNumber(obj: any): any;
-export declare function findAndReplaceIcao(dataValue: any): void;
-export declare function convertICAO(obj: any): any;
-export declare function validateObject(obj: any, fixmVersion: string): any;
-export declare function toIATA(icaoCode: string): any;
+export declare const formatFlightNumber: (obj: any) => any;
+export declare const formatIcaoCodes: (dataValue: any) => void;
+export declare const convertICAO: (obj: any) => any;
+export declare const validateObject: (obj: any) => any;
+export declare const toIATA: (icaoCode: string) => any;

@@ -1,1 +1,1 @@
-export { transformFixmToAcris, parseFixmFromFile } from './lib/parser';
+export { transformFixmToAcris, transformXmlFileToAcris } from './lib/parser';

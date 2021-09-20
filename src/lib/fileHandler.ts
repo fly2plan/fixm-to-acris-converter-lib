@@ -7,19 +7,20 @@ const logger = winston.createLogger({
     ]
 });
 
-
-export function writeFile(fileName:string,data:any){
+// Write file
+export const writeFile=(fileName:string,data:any)=>{
     try{
         writeFileSync(fileName,data)
     }catch(e){
-        logger.error("File Write Error : " + e)
+        logger.error(`File Write Error : ${e}`)
     }
 }
-export function readFile(filepath:string){
+// Read a File
+export const readFile=(filepath:string)=>{
     if(existsSync(filepath)){
         return readFileSync(filepath,"utf8")
     }else{
-        logger.error("No Such File Exists : ",filepath);
+        logger.error(`No Such File Exists : ${filepath}`);
         throw ReferenceError("File not found")
     }
 }

@@ -1,9 +1,9 @@
 import { getIATA } from '../asset/asset' ;
 import winston from "winston" ;
-import * as FILTER from "./filters"
-import {getType} from'./objectHandler' ;
+import {getType } from'./objectHandler' ;
+import { ICAO_KEYS } from './constants';
+// tslint:disable-next-line: no-var-requires
 const IterateObject = require("iterate-object")
-
 
 const logger = winston.createLogger({
     'transports': [
@@ -11,91 +11,108 @@ const logger = winston.createLogger({
     ]
 });
 
-function validateAirportFacility(obj:any){
+const formatAirportFacility = (obj:any)=>{
     try{
-    let iataCode = obj.extensions.AirportFacility.iataCode
+    const iataCode = obj.extensions.AirportFacility.iataCode
     if(iataCode !== ""){
         obj.extensions.AirportFacility.IATAIdentifier = iataCode
         delete obj.extensions.AirportFacility.iataCode
     }
     }catch(e){
-        logger.error("Undefined Property Error : ",e)
+        logger.error(`Undefined Property Error : ${e}`)
     }
 }
 
 
-export function validateFlightNumber(obj:any){
+export const formatFlightNumber = (obj:any) =>{
     
-    let icaoCode = obj.flightNumber.airlineCode
-    let iataCode = toIATA(icaoCode.replace(/[0-9]/g, ''));
+    const icaoCode = obj.flightNumber.airlineCode
+    const iataCode = toIATA(icaoCode.replace(/[0-9]/g, ''));
 
-    if(iataCode == ''){
+    if(!iataCode){
         obj.flightNumber.airlineCode = icaoCode.replace(/[0-9]/g, '')
     }else{
         obj.flightNumber.airlineCode = iataCode
     }
 
     obj.flightNumber.trackNumber = icaoCode.replace(/\D/g,'');
-    if(obj.flightNumber.trackNumber ==''){
+    if(obj.flightNumber.trackNumber ===''){
         logger.warn("Cannot Detect Track Number")
     }
     return obj
 }
 
-// function setAirportCodes(obj:any){
-//     obj.departureAirport = toIATA(obj.departureAirport)
-//     obj.arrivalAirport = toIATA(obj.arrivalAirport)
-
-// }
 
 
-export function findAndReplaceIcao(dataValue:any){
-    let icaoKeys:any = ["locationIndicator"]
-
+export const formatIcaoCodes = (dataValue:any)=>{
+    
+    let iataData :any
     Object.keys(dataValue).forEach(key=>{
         if(key.toLowerCase().includes("icao") ){
-            if (typeof dataValue[key] === 'string'){
-                dataValue.iataCode = toIATA(dataValue[key])
+            const icaoData = dataValue[key]
+            switch (getType(icaoData)){
+                case 'string':
+                    iataData = toIATA(icaoData)
+                    break
+                case 'array':
+                    const iataArray :any = []
+                    if (icaoData.length > 0){
+                        icaoData.forEach((element:any) => {
+                            iataArray.push(toIATA(element))
+                        });
+                        iataData = iataArray
+                        // if single entry array, trat it as string
+                        if(iataArray.length === 1){
+                            dataValue[key] = icaoData[0]
+                            iataData = iataArray[0]
+                        }
+                    }else{
+                        iataData = []
+                    }
+                break
             }
-        }
-        if(icaoKeys.includes(key)){
+            dataValue[key.replace(/icao/ig ,"iata")] = iataData
+        }else if(ICAO_KEYS.includes(key)){
             if (typeof dataValue[key] !== 'object'){
                 dataValue[key] = toIATA(dataValue[key])
             }
 
         }
-    })
 
+
+    })
 }
-export function convertICAO(obj:any){
+
+export const convertICAO = (obj:any)=>{
     IterateObject(obj,(value: any)=> {
         const type = getType(value)
         switch (type){
             case 'object':
-                findAndReplaceIcao(value)
+                formatIcaoCodes(value);
+                break;
+               
             case 'array':
-                convertICAO(value)
+                convertICAO(value);
+                break;
+               
         }
     })
     return obj
 }
 
-export function validateObject(obj:any,fixmVersion :string){
+export const validateObject = (obj:any)=>{
     obj = convertICAO(obj)
-    validateFlightNumber(obj)
-    validateAirportFacility(obj)
-    // if(fixmVersion === '4.1'){
-    //     setAirportCodes(obj)
-    // }
+    formatFlightNumber(obj)
+    formatAirportFacility(obj)
     return obj
 }
 
 
-export function toIATA(icaoCode:string){
+export const toIATA = (icaoCode:string)=>{
     const codeList = getIATA()
     let IATAcode = codeList[icaoCode]
     if(IATAcode === undefined){
-        logger.warn("Cannot find the IATA code to the corresponding ICAO Code :"+icaoCode+", Setting empty value")
+        logger.warn(`Cannot find the IATA code to the corresponding ICAO Code : ${icaoCode} Setting empty value`)
         IATAcode = ''
     }
     return IATAcode

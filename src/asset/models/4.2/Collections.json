@@ -1,6 +1,6 @@
 {
     "AircraftType_collection":{
-        "keys":["fx:type"],
+        "keys":["fx:type","fx:icaoAircraftTypeDesignator"],
         "base":"fx:aircraftType",
         "path":["fx:Flight","fx:aircraft"]
     },

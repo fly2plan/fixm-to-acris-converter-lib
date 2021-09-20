@@ -1,1 +1,1 @@
-export declare function formatObject(formatObj: any): any;
+export declare const formatObject: (formatObj: any) => any;
