@@ -10,11 +10,11 @@
     "registration": ["fx:Flight","fx:aircraft","fx:registration"]
   },        
 "flightNumber": {
-    "airlineCode": ["fx:Flight","fx:flightPlanOriginator","identifier"],
+    "airlineCode": ["fx:Flight","fx:flightIdentification","fx:aircraftIdentification"],
     "trackNumber": ["fx:Flight","fx:flightPlanOriginator","identifier"]
   },
-"departureAirport": ["fx:Flight","fx:departure","fx:aerodrome"],
-"arrivalAirport": ["fx:Flight","fx:arrival","fx:arrivalAerodrome"],
+"departureAirport": ["fx:Flight","fx:departure","fx:aerodrome","locationIndicator"],
+"arrivalAirport": ["fx:Flight","fx:arrival","fx:arrivalAerodrome","locationIndicator"],
 "originDate": ["fx:Flight","fx:departure","fx:actualTimeOfDeparture"],
 "departure": {
     "actual":["fx:Flight","fx:departure","fx:actualTimeOfDeparture"],

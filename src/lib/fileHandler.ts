@@ -8,9 +8,9 @@ const logger = winston.createLogger({
 });
 
 
-export function writeFile(file:string,data:any){
+export function writeFile(fileName:string,data:any){
     try{
-        writeFileSync(file,data)
+        writeFileSync(fileName,data)
     }catch(e){
         logger.error("File Write Error : " + e)
     }

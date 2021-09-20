@@ -7,8 +7,6 @@ import {formatObject} from "./formatter" ;
 import {getCollectionModel, getModel} from "../asset/asset" ; 
 import winston, { version } from "winston" ;
 import { Parser } from "xml2js"
-import { Verify } from "crypto";
-import { readFileSync } from "fs";
 import { validateObject } from "./validator";
 
 
@@ -36,6 +34,7 @@ export function parseFixmFromFile(fixmFilePath:string,fixmversion?:string){
 
 
 export function transformFixmToAcris(xmlString:any,fixmversion?:string):any{
+    
     setFixmDatFromFile(xmlString,fixmversion)
     logger.info("Starting XML parsing")
     ACRIS_OBJ = jsHandle.JSONify(mapper(ACRISFlight))

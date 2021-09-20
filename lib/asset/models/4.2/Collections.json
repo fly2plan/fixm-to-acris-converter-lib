@@ -32,7 +32,7 @@
     },
     "DestinationAerodromeAlternate_collection":{
         "base":"fx:destinationAerodromeAlternate",
-        "keys":["iataDesignator"],
+        "keys":["locationIdentifier","iataDesignator"],
         "path":["fx:Flight","fx:arrival"]
     },
     "EstimatedElapsedTime_collection":{
@@ -174,9 +174,9 @@
         "keys":["fx:element","fx:point4D","fx:level","altitude"]
     },
     "modifiedRouteItemReference_collection":{
-        "base":"fx:element",
-        "path":["fx:Flight","fx:routeTrajectoryGroup","fx:agreed"],
-        "keys":["fx:modifiedRouteItemReference"]
+        "base":"fx:agreed",
+        "path":["fx:Flight","fx:routeTrajectoryGroup"],
+        "keys":["fx:element","fx:modifiedRouteItemReference"]
     },
     "position_collection":{
         "base":"fx:agreed",

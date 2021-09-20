@@ -1,4 +1,4 @@
-import { getAlternative, getCollectionModel } from "../asset/asset";
+import { getAlternative } from "../asset/asset";
 import winston from "winston" ;
 
 const IterateObject = require("iterate-object")
@@ -46,7 +46,6 @@ function getDataFromObject(dataObject : any,Key :any){
 
 
 export function fetchDataFromPath(dataObj: any, keyList:string[]){
-
     keyList.forEach(key =>{
         dataObj = getDataFromObject(dataObj,key);
     })
@@ -84,28 +83,31 @@ function tryAlternateKey(key:string){
 export function generateCollectionFromObject(collectionObject:any,Key:string,collectionDetails:any,iterObj:any):any{
   let CollectObj :any;
   const collectionKeySet = collectionDetails.keys
-  const collectionBase = collectionDetails.base
-  IterateObject([iterObj],(value:any)=>{
-      let type = getType(value)
-      switch (type){
-          case 'object':
-              if(value.hasOwnProperty(collectionBase)){
-                if(value[collectionBase]=== undefined){
-                    logger.error("Cannot find collection object base, setting empty collection value")
-                    collectionObject[Key] = []
-                }else{
-                CollectObj = value[collectionBase]
-                collectionKeySet.forEach((key:any)=>{
-                    CollectObj = collectKeys(CollectObj,key)
-                })
-                collectionObject[Key] = CollectObj
-                return
-              }
+  let collectionBase = collectionDetails.base
+  if(iterObj !== ''){
+        IterateObject([iterObj],(value:any)=>{
+            let type = getType(value)
+            switch (type){
+                case 'object':
+                        collectionBase = verifiedKey(value,collectionBase)
+                        if(collectionBase !== null){
+                            CollectObj = value[collectionBase]
+                            collectionKeySet.forEach((key:any)=>{
+                                CollectObj = collectKeys(CollectObj,key)
+                            })
+                            collectionObject[Key] = [CollectObj]
+                            break
+                        }else{
+                            collectionObject[Key] = []
+                            break
+                        }
+                case 'array':
+                    generateCollectionFromObject(collectionObject,Key,collectionDetails,value)
             }
-          case 'array':
-            generateCollectionFromObject(collectionObject,Key,collectionDetails,value)
-      }
-  })
+        })
+    }else{
+        collectionObject[Key] = []
+    }
    
 }
 

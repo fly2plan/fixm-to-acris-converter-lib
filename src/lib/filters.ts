@@ -16,13 +16,16 @@ export function keyPresent(srcObj:any,keyValue :string){
 }
 
 export function removeTag(objValue:any){
-    const tag = "fx:"
+    const tag = ["fx:","fb:"]
     Object.keys(objValue).forEach(key=>{
-        if(key.includes(tag)){
-            let newKey = key.replace(tag,'')
-            objValue[newKey] = objValue[key]
-            delete objValue[key]
-        }
+        tag.forEach(tagValue=>{
+            if(key.includes(tagValue)){
+                let newKey = key.replace(tagValue,'')
+                objValue[newKey] = objValue[key]
+                delete objValue[key]
+            }
+        })
+
     })
 }
 

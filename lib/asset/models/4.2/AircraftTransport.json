@@ -4,12 +4,17 @@
     "formation":"AircraftTransportFormation",
     "AircraftTransportType":"AircraftTransportType",
 
-    "AircraftType":["fx:Flight","fx:aircraft","fx:aircraftType","fx:type","fx:otherAircraftType"],
+    "AircraftType":{
+        "icaoCode": "AircraftType_collection",
+        "modelName": ["fx:Flight","fx:aircraft","fx:coloursAndMarkings"],
+        "registration": ["fx:Flight","fx:aircraft","fx:registration"]
+      },   
     "AircraftTransportEquipment":{
         "CommunicationCapabilityCode": ["fx:Flight","fx:aircraft","fx:capabilities","fx:communication","fx:communicationCapabilityCode"],
         "datalinkCommunicationCapabilityCodeList" : ["fx:Flight","fx:aircraft","fx:capabilities","fx:communication","fx:datalinkCommunicationCapabilityCode"],
         "dinghies" : "DinDinghy",
         "emergencyRadioCapabilityTypeList" : ["fx:Flight","fx:aircraft","fx:capabilities","fx:survival","fx:emergencyRadioCapabilityType"],
+        "navigationCapabilityCode" : ["fx:Flight","fx:aircraft","fx:capabilities","fx:navigation","fx:navigationCapabilityCode"],
         "otherNavigationCapabilities": ["fx:Flight","fx:aircraft","fx:capabilities","fx:navigation","fx:otherNavigationCapabilities"],
         "otherSurveillanceCapabilities": ["fx:Flight","fx:aircraft","fx:capabilities","fx:surveillance","fx:otherSurveillanceCapabilities"],
         "performanceBasedCode": ["fx:Flight","fx:aircraft","fx:capabilities","fx:navigation","fx:performanceBasedCode"],

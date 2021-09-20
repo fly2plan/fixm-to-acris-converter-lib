@@ -3,11 +3,6 @@ import {getType} from'./objectHandler' ;
 import winston from "winston" ;
 import * as FILTER from "./filters"
 
-const logger = winston.createLogger({
-    'transports': [
-        new winston.transports.Console()
-    ]
-});
 /* tslint:disable no-var-requires */
 const IterateObject = require("iterate-object")
 
@@ -22,7 +17,6 @@ function setTextValue(dataValue:any){
 
 export function formatObject(formatObj:any){
     IterateObject(formatObj,(value: any,name:any)=> {
-
         const type = getType(value)
         switch (type){
             case 'object':
@@ -34,7 +28,6 @@ export function formatObject(formatObj:any){
                 FILTER.removeEmptyArrays(name,value,formatObj)
                 FILTER.removeEmptyObject(name,value,formatObj)
             case 'array':
-
                 formatObject(value)
         }
     })

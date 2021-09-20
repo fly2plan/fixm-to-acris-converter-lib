@@ -11,7 +11,21 @@ const logger = winston.createLogger({
     ]
 });
 
+function validateAirportFacility(obj:any){
+    try{
+    let iataCode = obj.extensions.AirportFacility.iataCode
+    if(iataCode !== ""){
+        obj.extensions.AirportFacility.IATAIdentifier = iataCode
+        delete obj.extensions.AirportFacility.iataCode
+    }
+    }catch(e){
+        logger.error("Undefined Property Error : ",e)
+    }
+}
+
+
 export function validateFlightNumber(obj:any){
+    
     let icaoCode = obj.flightNumber.airlineCode
     let iataCode = toIATA(icaoCode.replace(/[0-9]/g, ''));
 
@@ -28,11 +42,11 @@ export function validateFlightNumber(obj:any){
     return obj
 }
 
-function setAirportCodes(obj:any){
-    obj.departureAirport = toIATA(obj.departureAirport)
-    obj.arrivalAirport = toIATA(obj.arrivalAirport)
+// function setAirportCodes(obj:any){
+//     obj.departureAirport = toIATA(obj.departureAirport)
+//     obj.arrivalAirport = toIATA(obj.arrivalAirport)
 
-}
+// }
 
 
 export function findAndReplaceIcao(dataValue:any){
@@ -69,9 +83,10 @@ export function convertICAO(obj:any){
 export function validateObject(obj:any,fixmVersion :string){
     obj = convertICAO(obj)
     validateFlightNumber(obj)
-    if(fixmVersion === '4.1'){
-        setAirportCodes(obj)
-    }
+    validateAirportFacility(obj)
+    // if(fixmVersion === '4.1'){
+    //     setAirportCodes(obj)
+    // }
     return obj
 }
 
