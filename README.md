@@ -15,6 +15,6 @@ Nodejs library for FIXM 4.2 XML schema to ACRIS JSON Schema converter which take
 	-  This will generate an ACRIS.json file corresponding  to the given fixm sample
         -  The file acris.json have the output of the execution.
 	
-The transformFixmToAcris and transformXmlFileToAcris function are  entry points into the lib. The function transformFixmToAcris access XML file contents and schema version(optional one, no need to pass). The function transformXmlFileToAcris accepts XML the file path and version . Version is optional filed . Default is 4.2 .
+The transformFixmToAcris and transformXmlFileToAcris function are  entry points into the lib. The function transformFixmToAcris accept XML file contents and schema version(optional parameter one, no need to pass) as parameters. The function transformXmlFileToAcris accepts XML the file path and version . Version is optional parameter . Default is 4.2 .
 	
 
