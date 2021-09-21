@@ -1,6 +1,6 @@
 import {getEmptyAcris} from "../asset/ACRIS_Empty";
 import { toClass } from "class-converter";
-import { readFile, writeFile } from "./fileHandler";
+import { readFile} from "./fileHandler";
 import { ACRISFlight } from "../asset/ACRISFlight";
 import * as jsHandle from "./objectHandler"
 import {formatObject} from "./formatter" ;
