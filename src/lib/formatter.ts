@@ -1,5 +1,5 @@
 /* eslint @typescript-eslint/no-var-requires: "off" */
-import {getType, keyPresent} from'./objectHandler' ;
+import {getType, keyPresent} from'./objecthandler' ;
 import * as FILTER from "./filters"
 
 /* tslint:disable no-var-requires */

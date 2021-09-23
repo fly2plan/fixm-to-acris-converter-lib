@@ -1,6 +1,6 @@
 import { getIATA } from '../asset/util' ;
 import winston from "winston" ;
-import {getType } from'./objectHandler' ;
+import {getType } from'./objecthandler' ;
 import { ICAO_KEYS } from './constants';
 // tslint:disable-next-line: no-var-requires
 const IterateObject = require("iterate-object")

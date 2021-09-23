@@ -1,6 +1,6 @@
 import { toClass } from "class-converter";
 import { ACRISFlight } from "../asset/models/ACRISFlight";
-import * as jsHandle from "./objectHandler"
+import * as jsHandle from "./objecthandler"
 import {formatObject} from "./formatter" ;
 import {getCollectionModel, getModel} from "../asset/util" ; 
 import winston from "winston" ;
