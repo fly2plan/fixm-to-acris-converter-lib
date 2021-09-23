@@ -3,13 +3,15 @@
 A Nodejs library for converting the FIXM 4.2 XML schema to ACRIS JSON Schema which takes either FIXM XML content  as an input parameter and produces an ACRIS-based JSON output content. The sample folder has files that shows how to use this library.
 
 ####   The Project consist of   ####
-	-  JSON files that maps the fixm xml tags to ACRIS attributes.
-	-  Typescript source code.
-	-  scripts to convert the project to js.
-	-  Sample test code in JS.
-	-  Compiled source code in JS after build.
 
-#### * Running the sample * ####
+	-  Typescript source code in "src" folder.
+	-  Sample usage/test code in "sample_test" folder.
+	-  Compiled/build source code in "lib"  folder.
+	-  package.json , tsconfig.json, jestconfig.json and other related standard nodejs project files.
+	
+	
+
+####  Running the sample  ####
 
 - Clone the repo and run "npm install" command
 - Build the project using “npm run build”
