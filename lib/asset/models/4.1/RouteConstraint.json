@@ -1,9 +1,0 @@
-{
-    "departureOrArrivalCode": ["mesg:Message","mesg:flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:constraint","fx:departureOrArrivalIndicator"],
-    "description": ["mesg:Message","mesg:flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:constraint","fx:description"],
-    "levelConstraintActivation": ["mesg:Message","mesg:flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:routeChange","fx:level","fx:activation"],
-    "levelConstraintLevel": ["mesg:Message","mesg:flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:constraint","fx:level","fx:level","flightLevelOrAltitudeValue","flightLevel","_"],
-    "restrictionReference": ["mesg:Message","mesg:flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:constraint","fx:restrictionReference"],
-    "timeConstraintCondition": ["mesg:Message","mesg:flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:constraint","fx:time","fx:condition"],
-    "timeSpecification": ["mesg:Message","mesg:flight","fx:routeTrajectoryGroup","fx:agreed","fx:element","fx:constraint","fx:time","fx:timeSpecification"]
-}
