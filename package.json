@@ -7,7 +7,7 @@
   "scripts": {
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
-    "build": "npm run build-ts && copyfiles -u 1 src/asset/*/*.json lib/ && copyfiles -u 1 src/asset/*/*/*.json lib/",
+    "build": "npm run build-ts && copyfiles -u 1 src/asset/*/*.json lib/ && copyfiles -u 1 src/asset/*/*/*/*.json lib/",
     "clean": "shx rm -rf ./lib/*",
     "fixm": "tsc && node index.js",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
