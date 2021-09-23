@@ -25,6 +25,8 @@ The exmaple.js file inside the sample_test folder shows how to use the library.
 
 The library finds the IATA code from ICAO from a mapping property file if the data present in the file. Otherwise, it gives an empty value as IATA code. Updating the property file will solve this issue.
 
+This libray  can also publish as the  npm package and use directly in any nodejs project
+
 	
 
 
