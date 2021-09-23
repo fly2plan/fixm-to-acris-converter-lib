@@ -1,5 +1,0 @@
-{
-    "aircraftIdentification": ["mesg:Message","mesg:flight","fx:flightIdentification","fx:aircraftIdentification"] ,
-    "aircraftIdentificationPrevious":["mesg:Message","mesg:flight","fx:flightIdentification","fx:aircraftIdentificationPrevious"], 
-    "globallyUniqueFlightIdentifier": ["mesg:Message","mesg:flight","fx:gufi","_"]
-}

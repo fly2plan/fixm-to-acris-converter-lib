@@ -1,6 +1,0 @@
-{
-    "totalCapacity":["mesg:Message","mesg:flight","fx:aircraft","fx:capabilities","fx:survival","fx:dinghyInformation","fx:totalCapacity"],
-    "color":["mesg:Message","mesg:flight","fx:aircraft","fx:capabilities","fx:survival","fx:dinghyInformation","fx:colour"],
-    "quantity":["mesg:Message","mesg:flight","fx:aircraft","fx:capabilities","fx:survival","fx:dinghyInformation","fx:number"], 
-    "cover": ["mesg:Message","mesg:flight","fx:aircraft","fx:capabilities","fx:survival","fx:dinghyInformation","fx:covered"]
-}

@@ -1,5 +1,0 @@
-{
-    "applicabilityDescription":["mesg:Message","mesg:flight","fx:flightConstraint","fx:applicability"],
-    "restrictionReference":["mesg:Message","mesg:flight","fx:flightConstraint","fx:impact"],
-    "impactDescription":["mesg:Message","mesg:flight","fx:flightConstraint","fx:restrictionReference","restrictionIdentifier"]
-}
