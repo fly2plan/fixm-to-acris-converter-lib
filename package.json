@@ -1,7 +1,7 @@
 {
   "name": "fixmtoacrisconverter",
   "version": "1.0.1",
-  "description": "FixM 4.2 50 ACRIS JSON converter .The is named as fixmtoacrisconverter.",
+  "description": "FixM 4.2 to ACRIS JSON data converter .The is named as fixmtoacrisconverter.",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
@@ -44,7 +44,7 @@
     "type": "git",
     "url": "git+https://github.com/fly2plan/fixm-to-acris-converter-lib.git"
   },
-  "author": "Renjith K N .IBS software",
+  "author": "Renjith K N .IBS software., Sethu IBS Software.",
   "keywords": [
     "FIXM",
     "ACRIS"
